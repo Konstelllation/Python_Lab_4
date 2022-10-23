@@ -1,21 +1,23 @@
-import math
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-def f (x, n):
+
+def f(x, n):
     if n == 0:
-        x = 1
-        return(x)
+        a = 1
 
     elif n < 0:
-        x = 1 / x ** (abs(n))
-        return(x)
+        a = 1 / f(x, abs(n))
 
     else:
-        x = x * (x ** (n-1))
-        return(x)
+        a = x * (pow(x, (n-1)))
+
+    return a
+
 
 if __name__ == '__main__':
     print("Введите x:")
     x = float(input())
-    print ("Введите n:")
+    print("Введите n:")
     n = int(input())
-    print("Результат рекурсивной функции: ", f(x,n))
+    print("Результат рекурсивной функции: ", f(x, n))
