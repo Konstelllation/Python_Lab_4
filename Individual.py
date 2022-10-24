@@ -1,18 +1,17 @@
 # !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
 def f(x, n):
     if n == 0:
-        a = 1
+        return 1
+    if n == -1:
+        return 1. / x
+    p = f(x, n // 2)
+    p *= p
+    if n % 2:
+        p *= x
+    return p
 
-    elif n < 0:
-        a = 1 / f(x, abs(n))
-
-    else:
-        a = x * (pow(x, (n-1)))
-
-    return a
 
 
 if __name__ == '__main__':
